@@ -1,0 +1,49 @@
+<div ng-show="tab.isSet(1)">
+	<form name="userForm" ng-controller="UserAdditionController as addUser"
+		ng-submit="submit()">
+		<blockquote>
+			<fieldset class="form-group">
+				<input ng-model="user.userName" name="userName" type="text"
+					style="width: 300px;" class="form-control"
+					placeholder="Enter User Name" title="User Name" />
+			</fieldset>
+			<fieldset class="form-group">
+				<input ng-model="user.firstName" name="firstName" type="text"
+					style="width: 300px;" class="form-control"
+					placeholder="Enter First Name" title="First Name" />
+			</fieldset>
+			<fieldset class="form-group">
+				<input ng-model="user.lastName" name="lastName" type="text"
+					style="width: 300px;" class="form-control"
+					placeholder="Enter Last Name" title="Last Name" />
+			</fieldset>
+			<fieldset class="form-group">
+				<input ng-model="user.password" name="password" type="password"
+					style="width: 300px;" class="form-control"
+					placeholder="Enter Password" title="Password" />
+			</fieldset>
+			<fieldset class="form-group">
+				<input ng-model="repassword" name="repassword" type="password"
+					style="width: 300px;" class="form-control"
+					placeholder="ReEnter Password" title="RePassword" />
+			</fieldset>
+			<fieldset class="form-group">
+				<input ng-model="user.company" name="company" type="text"
+					style="width: 300px;" class="form-control"
+					placeholder="Enter Company" title="Company" />
+			</fieldset>
+			<fieldset class="form-group">
+				<input type="submit" class="btn btn-primary pull-left"
+					value="Submit" />
+			</fieldset>
+			<div class="alert alert-success fade in" ng-show="statusSuccess">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				<strong>Success!</strong>
+			</div>
+			<div class="alert alert-danger fade in" ng-show="statusFailure">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				<strong>Failure!</strong>
+			</div>
+		</blockquote>
+	</form>
+</div>

@@ -1,0 +1,56 @@
+<div ng-show="tab.isSet(2)">
+	<form name="searchForm" ng-controller="UserSearchController as addUser"
+		ng-submit="submit()">
+		<blockquote>
+			<fieldset class="form-group">
+				<input ng-model="search.userName" name="userName" type="text"
+					style="width: 300px;" class="form-control"
+					placeholder="Enter User Name" title="User Name" />
+			</fieldset>
+			<fieldset class="form-group">
+				<input ng-model="search.lastName" name="lastName" type="text"
+					style="width: 300px;" class="form-control"
+					placeholder="Enter Last Name" title="Last Name" />
+			</fieldset>
+			<fieldset class="form-group">
+				<input type="submit" class="btn btn-primary pull-left"
+					value="Search" />
+			</fieldset>
+			<div class="alert alert-success fade in" ng-show="statusSuccess">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				<strong>Success!</strong>
+			</div>
+			<div ng-show="statusSuccess" class="panel panel-default">
+				<div class="panel-heading">Search Result</div>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>User Name</th>
+							<th>Company</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>{{user.firstName}}</td>
+							<td>{{user.lastName}}</td>
+							<td>{{user.userName}}</td>
+							<td>{{user.company}}</td>
+							<td><a href="#"> <span
+									class="glyphicon glyphicon-eye-open" style="color: green"></span></td>
+							<td><a href="#"> <span class="glyphicon glyphicon-edit"></span></td>
+							<td><a href="#"> <span
+									class="glyphicon glyphicon-trash" style="color: red"></span></td>
+
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="alert alert-danger fade in" ng-show="statusFailure">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				<strong>Failure!</strong>
+			</div>
+		</blockquote>
+	</form>
+</div>
