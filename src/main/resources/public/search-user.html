@@ -1,17 +1,22 @@
 <div ng-show="tab.isSet(2)">
-	<form name="searchForm" ng-controller="UserSearchController as addUser"
+	<form name="searchForm" ng-controller="UserSearchController as searchUser"
 		ng-submit="submit()">
 		<blockquote>
 			<fieldset class="form-group">
+				<input ng-model="search.id" name="id" type="number"
+					style="width: 300px;" class="form-control"
+					placeholder="Enter ID" title="ID" />
+			</fieldset>
+			<!-- <fieldset class="form-group">
 				<input ng-model="search.userName" name="userName" type="text"
 					style="width: 300px;" class="form-control"
 					placeholder="Enter User Name" title="User Name" />
-			</fieldset>
-			<fieldset class="form-group">
+			</fieldset> -->
+			<!-- <fieldset class="form-group">
 				<input ng-model="search.lastName" name="lastName" type="text"
 					style="width: 300px;" class="form-control"
 					placeholder="Enter Last Name" title="Last Name" />
-			</fieldset>
+			</fieldset> -->
 			<fieldset class="form-group">
 				<input type="submit" class="btn btn-primary pull-left"
 					value="Search" />

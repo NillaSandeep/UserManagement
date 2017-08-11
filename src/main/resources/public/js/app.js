@@ -10,9 +10,11 @@
 		  $http.post('rest',data).then(function success(response){
 		  $scope.statusSuccess=true;
 		  $scope.user={};
+		  $scope.repassword=null;
 	  }, function failure(response){
 		  $scope.statusFailure=true;
 		  $scope.user={};
+		  $scope.repassword=null;
 	  })};
   });
   
@@ -21,14 +23,15 @@
 	  $scope.statusFailure=false;
 	  $scope.submit = function (){
 		  var data =$scope.search;
-		  $http.get('rest/'+$scope.search.userName 
-				  +'/'+$scope.search.lastName).then(function success(response){
-		  $scope.statusSuccess=true;
-		  $scope.user=response.data;
-		  $scope.search={};
-	  }, function failure(response){
-		  $scope.statusFailure=true;
-		  $scope.search={};
+//		  $http.get('rest/'+$scope.search.userName 
+//				  +'/'+$scope.search.lastName).then(function success(response){
+		  $http.get('rest/'+$scope.search.id).then(function success(response){
+			  $scope.statusSuccess=true;
+			  $scope.user=response.data;
+			  $scope.search={};
+		  }, function failure(response){
+			  $scope.statusFailure=true;
+			  $scope.search={};
 	  })};
   });
 
